@@ -1,4 +1,4 @@
 # Packet Sniffers
 
-We'll use this repository for our group project.
+We're gonna sniff your packets bro.
 

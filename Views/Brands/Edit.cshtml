@@ -1,0 +1,54 @@
+
+@model EarbudExplorer.Models.Brand
+
+@{
+    // Set the page title.
+    ViewData["Title"] = "Edit Brand";
+}
+
+<h1>Edit Brand</h1>
+
+<h4>Update Brand Information</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <!-- Submit changes to the POST Edit action. -->
+        <form asp-action="Edit"
+              asp-route-id="@Model.BrandId"
+              method="post">
+
+            <!-- Preserve the brand ID when submitting the form. -->
+            <input type="hidden" asp-for="BrandId" />
+
+            <!-- Display errors returned by model validation. -->
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Name"
+                       class="form-label"></label>
+
+                <!-- Automatically displays the current brand name. -->
+                <input asp-for="Name"
+                       class="form-control" />
+
+                <span asp-validation-for="Name"
+                      class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Save Changes
+            </button>
+
+            <a asp-action="Index"
+               class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Enable client-side form validation. -->
+    <partial name="_ValidationScriptsPartial" />
+}

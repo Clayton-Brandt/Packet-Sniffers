@@ -1,0 +1,55 @@
+
+@model IEnumerable<EarbudExplorer.Models.Brand>
+
+@{
+    // Set the title displayed in the browser and layout.
+    ViewData["Title"] = "Brands";
+}
+
+<h1>Earbud Brands</h1>
+
+<p>
+    Browse and manage the brands available in Earbud Explorer.
+</p>
+
+<!-- Opens the form for adding a new brand. -->
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        Add New Brand
+    </a>
+</p>
+
+<!-- Display the list of brands in a Bootstrap table. -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Brand Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var brand in Model)
+        {
+            <tr>
+                <td>@brand.Name</td>
+                <td>
+                    <!-- Pass the selected brand's ID to each action. -->
+                    <a asp-action="Details"
+                       asp-route-id="@brand.BrandId">Details</a> |
+
+                    <a asp-action="Edit"
+                       asp-route-id="@brand.BrandId">Edit</a> |
+
+                    <a asp-action="Delete"
+                       asp-route-id="@brand.BrandId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <!-- Show a message when no brands exist in the database. -->
+    <p>No brands have been added yet.</p>
+}

@@ -1,0 +1,24 @@
+
+# Compiled .NET files
+bin/
+obj/
+
+# Visual Studio and VS Code local settings
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Local development configuration
+appsettings.Development.json
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+*.mdf
+*.ldf
+
+# Temporary files
+*.log
+*.tmp

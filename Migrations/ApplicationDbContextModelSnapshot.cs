@@ -132,7 +132,7 @@ namespace EarbudExplorer.Migrations
                     b.HasOne("EarbudExplorer.Models.Brand", "Brand")
                         .WithMany("Earbuds")
                         .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Brand");

@@ -35,19 +35,29 @@ namespace EarbudExplorer.Data
 
         // Configures database relationships and keys
         // when Entity Framework creates the database.
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Applies the default Entity Framework configurations.
+            // Apply the default Entity Framework Core configurations.
             base.OnModelCreating(modelBuilder);
 
-            // Defines a composite primary key for EarbudFeature.
+            // Configure the relationship between Brand and Earbud.
+            // One brand can have many earbuds, but each earbud
+            // belongs to one brand.
+            modelBuilder.Entity<Earbud>()
+                .HasOne(e => e.Brand)
+                .WithMany(b => b.Earbuds)
+                .HasForeignKey(e => e.BrandId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            // Configure the many-to-many relationship
+            // between earbuds and features.
             //
-            // Both EarbudId and FeatureId together identify
-            // a unique relationship between an earbud and a feature.
-            //
-            // This prevents duplicate earbud-feature combinations.
+            // The combination of EarbudId and FeatureId
+            // must be unique in the junction table.
             modelBuilder.Entity<EarbudFeature>()
                 .HasKey(ef => new { ef.EarbudId, ef.FeatureId });
         }
+
     }
 }

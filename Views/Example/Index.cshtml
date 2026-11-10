@@ -1,0 +1,117 @@
+@* 
+
+@{
+    ViewData["Title"] = "Browse Trails";
+    var placeholderImage = "/images/trail-placeholder.jpg";
+}
+
+<div class="container py-4">
+    <h1 class="mb-4">Browse Trails</h1>
+    <div class="row">
+        <!--- This is the Search/Filter sidebar --->
+
+        <aside class="col-lg-3">
+            <form asp-controller="Trails" asp-action="Index" method="get">
+                <div class="card">
+                    <div class="card-body d-grid gap-3">
+
+                        <!-- Search Name -->
+                        <input type="text"
+                            name="searchString"
+                            class="form-control"
+                            placeholder="Search trails by name..."
+                            value="@ViewBag.SearchString">
+
+                        <!-- Filter Difficulty -->
+                        <select name="difficulty" class="form-select">
+                            <option value="">All Difficulties</option>
+                            <option value="Easy" selected="@(ViewBag.Difficulty == "Easy" ? "selected" : null)">Easy</option>
+                            <option value="Moderate" selected="@(ViewBag.Difficulty == "Moderate" ? "selected" : null)">Moderate</option>
+                            <option value="Hard" selected="@(ViewBag.Difficulty == "Hard" ? "selected" : null)">Hard</option>
+                        </select>
+
+                        <!-- Filter Length -->
+                        <select name="lengthRange" class="form-select">
+                            <option value="">Any Length</option>
+                            <option value="under5" selected="@(ViewBag.LengthRange == "under5" ? "selected" : null)">Less than 5 miles</option>
+                            <option value="5to10" selected="@(ViewBag.LengthRange == "5to10" ? "selected" : null)">5-10 miles</option>
+                            <option value="over10" selected="@(ViewBag.LengthRange == "over10" ? "selected" : null)">Greater than 10 miles</option>
+                        </select>
+
+                        <!-- Filter Rating -->
+                        <select name="rating" class="form-select">
+                            <option value="">Any Rating</option>
+                            <option value="5" selected="@(ViewBag.Rating?.ToString() == "5" ? "selected" : null)">5 Stars</option>
+                            <option value="4" selected="@(ViewBag.Rating?.ToString() == "4" ? "selected" : null)">4 Stars</option>
+                            <option value="3" selected="@(ViewBag.Rating?.ToString() == "3" ? "selected" : null)">3 Stars</option>
+                            <option value="2" selected="@(ViewBag.Rating?.ToString() == "2" ? "selected" : null)">2 Stars</option>
+                            <option value="1" selected="@(ViewBag.Rating?.ToString() == "1" ? "selected" : null)">1 Star</option>
+                        </select>
+
+                        <!-- Buttons -->
+                        <button type="submit" class="btn btn-primary">
+                            Apply Filters
+                        </button>
+
+                        <a asp-controller="Trails"
+                        asp-action="Index"
+                        class="btn btn-outline-secondary">
+                            Clear Filters
+                        </a>
+
+                    </div>
+                </div>
+            </form>
+        </aside>
+
+        <!--- The Trail Listings themselves -->
+        <section class="col-lg-9 d-grid gap-4">
+            @if (!Model.Any())
+            {
+                <div class="text-center py-5">
+                    <h2>No Trails Found</h2>
+                </div>
+            }
+            else
+            {
+                @foreach (var trail in Model)
+                {
+                    <div class="card overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-md-4 position-relative">
+                                <img src="@(string.IsNullOrWhiteSpace(trail.ImageUrl) ? placeholderImage : trail.ImageUrl)"
+                                    alt="@trail.Name" class="trail-image" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h2 class="card-title h4">@trail.Name</h2>
+
+                                    <dl class="row trail-details mb-2">
+                                        <dt class="col-sm-3">Location</dt>
+                                        <dd class="col-sm-9">@trail.Location</dd>
+
+                                        <dt class="col-sm-3">Length</dt>
+                                        <dd class="col-sm-9">@trail.Length miles</dd>
+
+                                        <dt class="col-sm-3">Difficulty</dt>
+                                        <dd class="col-sm-9">@trail.Difficulty</dd>
+
+                                        <dt class="col-sm-3">Rating</dt>
+                                        <dd class="col-sm-9">@(trail.Rating > 0 ? $"{trail.Rating} / 5" : "Not yet rated")</dd>
+                                    </dl>
+
+                                    <p class="card-text">@trail.Description</p>
+
+                                    <div class="text-end">
+                                        <a asp-action="Details" asp-route-id="@trail.TrailId" class="btn btn-primary btn-sm">View Trail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </section>
+    </div>
+
+</div> *@

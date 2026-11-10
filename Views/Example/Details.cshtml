@@ -1,0 +1,51 @@
+@* 
+
+@{
+    ViewData["Title"] = Model.Name;
+    var placeholderImage = "/images/trail-placeholder.jpg";
+}
+
+<div class="container py-4">
+    <a asp-action="Index" class="btn btn-link px-0 mb-2">Back to Browse</a>
+
+    <!--- Name and Image --->
+    <header class="mb-4">
+        <h1 class="mb-1">@Model.Name</h1>
+        <p class="trail-location mb-3">@Model.Location</p>
+        <div class="card overflow-hidden">
+            <img src="@(string.IsNullOrWhiteSpace(Model.ImageUrl) ? placeholderImage : Model.ImageUrl)"
+                 alt="@Model.Name" class="trail-detail-image" />
+        </div>
+    </header>
+    
+    <div class="row g-4">
+        <aside class="col-lg-4 order-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title h4">Trail Details</h2>
+                    <dl class="row trail-details mb-0">
+                        <dt class="col-5">Length</dt>
+                        <dd class="col-7">@Model.Length miles</dd>
+
+                        <dt class="col-5">Difficulty</dt>
+                        <dd class="col-7">@Model.Difficulty</dd>
+
+                        <dt class="col-5">Rating</dt>
+                        <dd class="col-7 mb-0">@(Model.Rating > 0 ? $"{Model.Rating} / 5" : "Not yet rated")</dd>
+                    </dl>
+                </div>
+            </div>
+        </aside>
+        <div class="col-lg-8 order-lg-1">
+            <section class="card">
+                <div class="card-body">
+                    <h2 id="about-heading" class="card-title h4">About This Trail</h2>
+                    <p class="card-text">@Model.Description</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    
+    @*VERY MUCH A WIP QUICKLY THROWN TOGETHER PAGE. WILL FIX LATER THIS IS BETTER THAN NOTHING! I think in hindsight I need to cut back on the cards.*@
+</div> *@@

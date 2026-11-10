@@ -1,0 +1,345 @@
+:root,
+[data-bs-theme="light"] {
+    /* Our Theme Vars */
+    --page-bg: #F7F4EE;
+    --card-bg: #FFFDFA;
+    --body-text: #2E2019;
+    --muted: #5F4E43;
+    --primary: #8A4F36;
+    --primary-dark: #713F2A;
+    --secondary: #4F5A45;
+    --secondary-dark: #3F4837;
+    --divider: #CEB59E;
+    --danger: #A4262C;
+    --danger-dark: #861F24;
+    --focus-ring: 0 0 0 0.25rem rgba(138, 79, 54, 0.35);
+    --link: var(--primary);
+    --link-hover: var(--primary-dark);
+    --danger-text: var(--danger);
+    --input-border: var(--muted);
+    --card-shadow: 0 2px 6px rgba(46, 32, 25, 0.06);
+    --surface-alt: #EFE9DF;
+    --hero-overlay: rgba(0, 0, 0, 0.55);
+
+    /* Bootstrap Vars */
+    --bs-body-bg: var(--page-bg);
+    --bs-body-bg-rgb: 247, 244, 238;
+    --bs-body-color: var(--body-text);
+    --bs-body-color-rgb: 46, 32, 25;
+    --bs-secondary-color: var(--muted);
+    --bs-secondary-bg: var(--surface-alt);
+    --bs-border-color: var(--divider);
+    --bs-primary: var(--primary);
+    --bs-primary-rgb: 138, 79, 54;
+    --bs-secondary: var(--secondary);
+    --bs-secondary-rgb: 79, 90, 69;
+    --bs-danger: var(--danger);
+    --bs-danger-rgb: 164, 38, 44;
+    --bs-link-color: var(--link);
+    --bs-link-color-rgb: 138, 79, 54;
+    --bs-link-hover-color: var(--link-hover);
+    --bs-link-hover-color-rgb: 113, 63, 42;
+    --bs-code-color: var(--link);
+    --bs-form-invalid-color: var(--danger-text);
+    --bs-form-invalid-border-color: var(--danger);
+}
+
+[data-bs-theme="dark"] {
+    /* Our Theme Vars */
+    --page-bg: #1C1713;
+    --card-bg: #27201A;
+    --body-text: #E6DDD2;
+    --muted: #B8A797;
+    --primary: #8A4F36;
+    --primary-dark: #9C5B40;
+    --secondary: #46513D;
+    --secondary-dark: #3A4333;
+    --divider: #4A3C30;
+    --danger: #A4262C;
+    --danger-dark: #B83238;
+    --focus-ring: 0 0 0 0.25rem rgba(217, 160, 136, 0.45);
+
+    --link: #D9A088;
+    --link-hover: #E8BBA6;
+    --danger-text: #F08A8E;
+    --input-border: #7A6A5C;
+    --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    --surface-alt: #322920;
+    --hero-overlay: rgba(0, 0, 0, 0.6);
+
+    /* Bootstrap Vars */
+    --bs-body-bg: var(--page-bg);
+    --bs-body-bg-rgb: 28, 23, 19;
+    --bs-body-color: var(--body-text);
+    --bs-body-color-rgb: 230, 221, 210;
+    --bs-emphasis-color: #FFFFFF;
+    --bs-emphasis-color-rgb: 255, 255, 255;
+    --bs-heading-color: inherit;
+    --bs-secondary-color: var(--muted);
+    --bs-secondary-color-rgb: 184, 167, 151;
+    --bs-secondary-bg: var(--surface-alt);
+    --bs-secondary-bg-rgb: 50, 41, 32;
+    --bs-tertiary-bg: #231D18;
+    --bs-tertiary-bg-rgb: 35, 29, 24;
+    --bs-border-color: var(--divider);
+    --bs-border-color-translucent: rgba(230, 221, 210, 0.15);
+    --bs-primary: var(--primary);
+    --bs-primary-rgb: 138, 79, 54;
+    --bs-secondary: var(--secondary);
+    --bs-secondary-rgb: 70, 81, 61;
+    --bs-danger: var(--danger);
+    --bs-danger-rgb: 164, 38, 44;
+    --bs-link-color: var(--link);
+    --bs-link-color-rgb: 217, 160, 136;
+    --bs-link-hover-color: var(--link-hover);
+    --bs-link-hover-color-rgb: 232, 187, 166;
+    --bs-code-color: var(--link);
+    --bs-form-invalid-color: var(--danger-text);
+    --bs-form-invalid-border-color: var(--danger-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+hr {
+    color: var(--divider);
+    opacity: 1;
+}
+
+/* Bootstrap Button Overrides */
+.btn-primary {
+    --bs-btn-bg: var(--primary);
+    --bs-btn-border-color: var(--primary);
+    --bs-btn-hover-bg: var(--primary-dark);
+    --bs-btn-hover-border-color: var(--primary-dark);
+    --bs-btn-active-bg: var(--primary-dark);
+    --bs-btn-active-border-color: var(--primary-dark);
+    --bs-btn-disabled-bg: var(--primary);
+    --bs-btn-disabled-border-color: var(--primary);
+    --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+}
+
+.btn-secondary {
+    --bs-btn-bg: var(--secondary);
+    --bs-btn-border-color: var(--secondary);
+    --bs-btn-hover-bg: var(--secondary-dark);
+    --bs-btn-hover-border-color: var(--secondary-dark);
+    --bs-btn-active-bg: var(--secondary-dark);
+    --bs-btn-active-border-color: var(--secondary-dark);
+    --bs-btn-disabled-bg: var(--secondary);
+    --bs-btn-disabled-border-color: var(--secondary);
+    --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
+}
+
+.btn-danger {
+    --bs-btn-bg: var(--danger);
+    --bs-btn-border-color: var(--danger);
+    --bs-btn-hover-bg: var(--danger-dark);
+    --bs-btn-hover-border-color: var(--danger-dark);
+    --bs-btn-active-bg: var(--danger-dark);
+    --bs-btn-active-border-color: var(--danger-dark);
+    --bs-btn-disabled-bg: var(--danger);
+    --bs-btn-disabled-border-color: var(--danger);
+    --bs-btn-focus-shadow-rgb: var(--bs-danger-rgb);
+}
+
+.btn-link {
+    --bs-btn-color: var(--link);
+    --bs-btn-hover-color: var(--link-hover);
+    --bs-btn-active-color: var(--link-hover);
+    --bs-btn-focus-shadow-rgb: var(--bs-link-color-rgb);
+}
+
+/* Bootstrap Cards Overrides */
+.card {
+    --bs-body-bg: var(--card-bg);
+    --bs-card-bg: var(--card-bg);
+    --bs-card-border-color: var(--divider);
+    box-shadow: var(--card-shadow);
+}
+/* Forms */
+.form-control,
+.form-select,
+.form-check-input {
+    border-color: var(--input-border);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    border-color: var(--primary);
+    box-shadow: var(--focus-ring);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.form-control.input-validation-error {
+    border-color: var(--bs-form-invalid-border-color);
+}
+
+/* Account pages */
+.nav-pills {
+    --bs-nav-link-color: var(--link);
+    --bs-nav-link-hover-color: var(--link-hover);
+    --bs-nav-pills-link-active-bg: var(--primary);
+}
+
+.nav-link:focus-visible {
+    box-shadow: var(--focus-ring);
+}
+
+/* Navbar */
+.site-navbar {
+    --bs-navbar-color: #FFFFFF;
+    --bs-navbar-hover-color: #FFFFFF;
+    --bs-navbar-active-color: #FFFFFF;
+    background-color: var(--secondary);
+    border-bottom: 1px solid var(--divider);
+}
+
+.site-navbar .navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.site-navbar .navbar-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.site-navbar .btn-link {
+    --bs-btn-color: #FFFFFF;
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-active-color: #FFFFFF;
+}
+
+.site-navbar .nav-link {
+    overflow-wrap: anywhere;
+}
+
+.site-navbar .nav-link:hover {
+    text-decoration: underline;
+}
+
+.site-navbar .nav-link:focus-visible {
+    box-shadow: 0 0 0 0.2rem #FFFFFF;
+}
+
+.mode-switch .btn {
+    --bs-btn-color: rgba(255, 255, 255, 0.7);
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-active-color: #FFFFFF;
+    --bs-btn-active-bg: rgba(255, 255, 255, 0.2);
+    --bs-btn-active-border-color: transparent;
+}
+
+/* Homepage */
+.homepage-background {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.homepage-background::before {
+    content: "";
+    position: absolute;
+    inset: -16px;
+
+    background-image:
+        linear-gradient(
+            var(--hero-overlay),
+            var(--hero-overlay)
+        ),
+        url('/images/earbud-background.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(6px);
+}
+
+.homepage-background .hero {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hero-buttons input {
+    width: 260px;
+}
+
+/* Trails */
+.trail-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: var(--bs-secondary-bg);
+}
+
+/* AI assisted fix that fixed an issue with trail images inconsistences. Will look into later*/
+@media (min-width: 768px) {
+    .trail-image {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+    }
+}
+
+.trail-details dt {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+/* Trail Details */
+.trail-location {
+    color: var(--muted);
+}
+
+.trail-detail-image {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 40vw, 420px);
+    object-fit: cover;
+    background-color: var(--bs-secondary-bg);
+}

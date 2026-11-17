@@ -18,11 +18,15 @@ dotnet build
 dotnet watch
 
 ## Our Packages
-   Top-level Package                                           Requested   Resolved
-   - DotNetEnv                                                 3.2.0       3.2.0
-   - Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore      10.0.13     10.0.13
-   - Microsoft.AspNetCore.Identity.EntityFrameworkCore         10.0.13     10.0.13
-   - Microsoft.AspNetCore.Identity.UI                          10.0.13     10.0.13
-   - Microsoft.EntityFrameworkCore.Design                      10.0.14     10.0.14
-   - Microsoft.EntityFrameworkCore.Sqlite                      10.0.14     10.0.14
-   - Microsoft.EntityFrameworkCore.Tools                       10.0.14     10.0.14
+
+## Packages / Dependencies
+
+| Package | Version | Purpose |
+|---|---|---|
+| DotNetEnv | 3.2.0 | Loads environment variables from a .env file |
+| Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore | 10.0.13 | Provides database error pages and diagnostics |
+| Microsoft.AspNetCore.Identity.EntityFrameworkCore | 10.0.13 | Integrates ASP.NET Core Identity with Entity Framework Core |
+| Microsoft.AspNetCore.Identity.UI | 10.0.13 | Provides built-in login, registration, and account management UI |
+| Microsoft.EntityFrameworkCore.Design | 10.0.14 | Provides design-time tools for Entity Framework Core |
+| Microsoft.EntityFrameworkCore.Sqlite | 10.0.14 | Enables SQLite database support through Entity Framework Core |
+| Microsoft.EntityFrameworkCore.Tools | 10.0.14 | Provides tools for database migrations and updates |

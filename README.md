@@ -19,8 +19,6 @@ dotnet watch
 
 ## Our Packages
 
-## Packages / Dependencies
-
 | Package | Version | Purpose |
 |---|---|---|
 | DotNetEnv | 3.2.0 | Loads environment variables from a .env file |

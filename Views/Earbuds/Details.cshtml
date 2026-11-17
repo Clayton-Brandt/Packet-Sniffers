@@ -1,0 +1,120 @@
+
+@{
+    ViewData["Title"] = "Earbud Details";
+}
+
+<div class="container py-5">
+
+    <a asp-controller="Earbuds"
+       asp-action="Index"
+       class="btn btn-outline-secondary mb-4">
+        <i class="bi bi-arrow-left"></i>
+        Back to Search
+    </a>
+
+    <div id="loadingMessage"
+         class="text-center py-5">
+
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+
+        <p class="mt-2">Loading earbud details...</p>
+
+    </div>
+
+    <div id="errorMessage"
+         class="alert alert-danger"
+         style="display: none;">
+    </div>
+
+    <div id="earbudDetails"
+         style="display: none;">
+
+        <div class="row g-4">
+
+            <!-- PRODUCT INFORMATION -->
+            <div class="col-lg-6">
+
+                <div class="card p-4 h-100">
+
+                    <p id="brandName"
+                       class="text-secondary mb-2">
+                    </p>
+
+                    <h1 id="earbudName"></h1>
+
+                    <h2 id="earbudPrice"
+                        class="earbud-price my-3">
+                    </h2>
+
+                    <p id="earbudRating"></p>
+
+                    <hr />
+
+                    <h5>Product Features</h5>
+
+                    <div id="earbudFeatures"
+                         class="d-flex flex-wrap gap-2">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SPECIFICATIONS -->
+            <div class="col-lg-6">
+
+                <div class="card p-4 h-100">
+
+                    <h3 class="mb-3">Specifications</h3>
+
+                    <table class="table">
+
+                        <tbody>
+
+                            <tr>
+                                <th>Battery Life</th>
+                                <td id="batteryLife"></td>
+                            </tr>
+
+                            <tr>
+                                <th>Noise Cancellation</th>
+                                <td id="noiseCancellation"></td>
+                            </tr>
+
+                            <tr>
+                                <th>Transparency Mode</th>
+                                <td id="transparencyMode"></td>
+                            </tr>
+
+                            <tr>
+                                <th>Water Resistance</th>
+                                <td id="waterResistance"></td>
+                            </tr>
+
+                            <tr>
+                                <th>Bluetooth Version</th>
+                                <td id="bluetoothVersion"></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <script src="~/js/earbud-details.js"
+            asp-append-version="true"
+            defer>
+    </script>
+}

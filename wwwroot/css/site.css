@@ -343,3 +343,61 @@ hr {
     object-fit: cover;
     background-color: var(--bs-secondary-bg);
 }
+
+
+
+/* Earbud Search */
+
+.earbud-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.earbud-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.earbud-card .card-title {
+    font-weight: 600;
+}
+
+.earbud-price {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.earbud-card .badge {
+    font-weight: 500;
+}
+
+#featureFilters {
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+#featureFilters .form-check {
+    margin-bottom: 6px;
+}
+
+#earbudResults {
+    align-items: stretch;
+}
+
+#earbudResults .card {
+    border-radius: 10px;
+}
+
+#earbudDetails .card {
+    border-radius: 10px;
+}
+
+#earbudDetails .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--body-text);
+    margin-bottom: 0;
+}
+
+#earbudDetails .table th {
+    width: 50%;
+}

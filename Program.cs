@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Packet_Sniffers.Data;
 using Packet_Sniffers.Services;
 using DotNetEnv;
+using Packet_Sniffers.Data.Seed;
 
 
 // Load environment variables
@@ -28,6 +29,24 @@ builder.Services.AddHttpClient<NpsService>();
 
 var app = builder.Build();
 
+// Create a temporary scope so we can access the database
+// through ASP.NET Core's dependency injection system.
+using (var scope = app.Services.CreateScope())
+{
+    // Create a database context for our seeders.
+    var context = scope.ServiceProvider
+        .GetRequiredService<ApplicationDbContext>();
+
+    // Insert any missing brands.
+    await BrandSeeder.SeedAsync(context);
+
+    // Insert any missing features.
+    await FeatureSeeder.SeedAsync(context);
+
+    // Seed real earbud products after their brands exist.
+    await EarbudSeeder.SeedAsync(context);
+
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
